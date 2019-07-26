@@ -1,40 +1,27 @@
 import itertools
 from colorama import init,Fore,Back,Style   #for colour
 init()
-'''game=[[1,0,2],
-      [1,2,1],
-      [1,2,1]] #string are immutable except we use global game(here)
-'''
-
-'''We're counting how many times the first value in the x list and then seeing if that value occurs as many times as the x list is long. In order for this to be true, all of the values in the list would have to be the same.'''
 
 def win(curent_game):
-    
     def all_same(l):
         if l.count(l[0])==len(l) and l[0]!=0 :
             return True
         else:
             return False
-
-
     #winning->horizontally
     for row in game:
         print(row)
         if all_same(row) :
             print("Player "+str(row[0])+"is the winner horizontally")
-            return True
-
-    
+            return True 
     #winning ->vertically 
     for col in range(len(game)):
         check=[]
-
         for row in game:
             check.append(row[col])
         if all_same(check) :
             print("Player "+str(check[0])+"is the winner vertically")
             return True
-
 # main diagonals
     diags=[]
     for i in range(len(game)):
@@ -81,11 +68,7 @@ def game_board(game_map,player=0,row=0,column=0,just_display=False):
     except Exception as e:
         print("something went wrong",e)
         return game_map,False
-#game_board(game,just_display=True)
-#game_board(game,player=1,row=2,column=1)
-#print(id(game))
-
-
+      
 play=True
 players=[1,2]
 while play:
@@ -114,10 +97,3 @@ while play:
             else:
                 print("wrong input go back ") 
                 play=False
-
-
-
-            
-
-
-

@@ -31,7 +31,6 @@ def win(curent_game):
         return True
 #secondary diagonal
     diags=[]
-
     col=reversed(range(len(game)))   #reversed list values
     for rows,cols in enumerate(col):
         diags.append(game[rows][cols])
